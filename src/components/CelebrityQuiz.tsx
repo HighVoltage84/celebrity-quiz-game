@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
-import jenniferLopezImage from '/lovable-uploads/aac0cdbb-7f72-4383-90be-e8f8e5e2a4be.png';
+import jenniferLopezImage from '/lovable-uploads/cb29c508-78d8-483b-a1eb-df4f2855677c.png';
 import tomCruiseImage from '/lovable-uploads/84b4a176-974f-4446-9827-96eaf90a7d30.png';
 
 const CelebrityQuiz = () => {
