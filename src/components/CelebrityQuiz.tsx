@@ -87,7 +87,7 @@ const CelebrityQuiz = () => {
           <img
             src={getCurrentImage()}
             alt={`Celebrity: ${getCurrentName()}`}
-            className="celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30"
+            className={`celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30 ${currentCelebrity === 'jenniferlopez' ? 'translate-x-2' : ''}`}
           />
         </div>
 
