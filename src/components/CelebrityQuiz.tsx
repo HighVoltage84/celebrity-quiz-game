@@ -1,41 +1,41 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
-import ryanReynoldsImage from '@/assets/ryan-reynolds.png';
-import zendayaImage from '/lovable-uploads/f7453851-de2e-4427-86b8-ba637d4b60c8.png';
+import jenniferLopezImage from '/lovable-uploads/9fd772e1-4349-4463-bb85-53bbfc96f3f7.png';
+import tomCruiseImage from '/lovable-uploads/84b4a176-974f-4446-9827-96eaf90a7d30.png';
 
 const CelebrityQuiz = () => {
-  const [currentCelebrity, setCurrentCelebrity] = useState<'ryanreynolds' | 'zendaya'>(() => {
-    const storedStatus = localStorage.getItem('celebrityQuizZendayaShown');
-    return storedStatus === 'true' ? 'zendaya' : 'ryanreynolds';
+  const [currentCelebrity, setCurrentCelebrity] = useState<'jenniferlopez' | 'tomcruise'>(() => {
+    const storedStatus = localStorage.getItem('celebrityQuizTomCruiseShown');
+    return storedStatus === 'true' ? 'tomcruise' : 'jenniferlopez';
   });
-  const [hasShownZendaya, setHasShownZendaya] = useState(() => {
-    return localStorage.getItem('celebrityQuizZendayaShown') === 'true';
+  const [hasShownTomCruise, setHasShownTomCruise] = useState(() => {
+    return localStorage.getItem('celebrityQuizTomCruiseShown') === 'true';
   });
   const [clickCount, setClickCount] = useState(0);
   const [clickTimer, setClickTimer] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Only start timer if Zendaya hasn't been shown yet
-    if (hasShownZendaya) {
+    // Only start timer if Tom Cruise hasn't been shown yet
+    if (hasShownTomCruise) {
       return;
     }
 
-    // Start 10-second timer to switch to Zendaya
+    // Start 10-second timer to switch to Tom Cruise
     const timer = setTimeout(() => {
-      setCurrentCelebrity('zendaya');
-      setHasShownZendaya(true);
-      localStorage.setItem('celebrityQuizZendayaShown', 'true');
+      setCurrentCelebrity('tomcruise');
+      setHasShownTomCruise(true);
+      localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
     }, 10000);
 
     return () => clearTimeout(timer);
-  }, [hasShownZendaya]);
+  }, [hasShownTomCruise]);
 
   const getCurrentImage = () => {
-    return currentCelebrity === 'ryanreynolds' ? ryanReynoldsImage : zendayaImage;
+    return currentCelebrity === 'jenniferlopez' ? jenniferLopezImage : tomCruiseImage;
   };
 
   const getCurrentName = () => {
-    return currentCelebrity === 'ryanreynolds' ? 'Ryan Reynolds' : 'Zendaya';
+    return currentCelebrity === 'jenniferlopez' ? 'Jennifer Lopez' : 'Tom Cruise';
   };
 
   const handleQuizClick = () => {
@@ -48,16 +48,16 @@ const CelebrityQuiz = () => {
 
     if (newClickCount === 3) {
       // Triple click detected - reset everything
-      setCurrentCelebrity('ryanreynolds');
-      setHasShownZendaya(false);
+      setCurrentCelebrity('jenniferlopez');
+      setHasShownTomCruise(false);
       setClickCount(0);
-      localStorage.removeItem('celebrityQuizZendayaShown');
+      localStorage.removeItem('celebrityQuizTomCruiseShown');
       
       // Start new 10-second timer
       const timer = setTimeout(() => {
-        setCurrentCelebrity('zendaya');
-        setHasShownZendaya(true);
-        localStorage.setItem('celebrityQuizZendayaShown', 'true');
+        setCurrentCelebrity('tomcruise');
+        setHasShownTomCruise(true);
+        localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
       }, 10000);
       
       return;
