@@ -16,8 +16,8 @@ const TomCruise = () => {
     const newClickCount = clickCount + 1;
     setClickCount(newClickCount);
 
-    if (newClickCount === 3) {
-      // Triple click detected - reset and go back to Jennifer Lopez
+    if (newClickCount === 10) {
+      // 10 taps detected - reset and go back to Jennifer Lopez
       setClickCount(0);
       localStorage.removeItem('celebrityQuizTomCruiseShown');
       navigate('/', { replace: true });

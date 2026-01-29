@@ -16,11 +16,11 @@ const CelebrityQuiz = () => {
       return;
     }
 
-    // Start 10-second timer to navigate to Tom Cruise page
+    // Start 25-second timer to navigate to Tom Cruise page
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
       navigate('/tom-cruise', { replace: true });
-    }, 10000);
+    }, 25000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
@@ -33,8 +33,8 @@ const CelebrityQuiz = () => {
     const newClickCount = clickCount + 1;
     setClickCount(newClickCount);
 
-    if (newClickCount === 3) {
-      // Triple click detected - reset everything
+    if (newClickCount === 10) {
+      // 10 taps detected - reset everything
       setClickCount(0);
       localStorage.removeItem('celebrityQuizTomCruiseShown');
       return;
