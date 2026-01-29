@@ -1,42 +1,29 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import jenniferLopezImage from '/lovable-uploads/cb29c508-78d8-483b-a1eb-df4f2855677c.png';
-import tomCruiseImage from '/lovable-uploads/84b4a176-974f-4446-9827-96eaf90a7d30.png';
 
 const CelebrityQuiz = () => {
-  const [currentCelebrity, setCurrentCelebrity] = useState<'jenniferlopez' | 'tomcruise'>(() => {
-    const storedStatus = localStorage.getItem('celebrityQuizTomCruiseShown');
-    return storedStatus === 'true' ? 'tomcruise' : 'jenniferlopez';
-  });
-  const [hasShownTomCruise, setHasShownTomCruise] = useState(() => {
-    return localStorage.getItem('celebrityQuizTomCruiseShown') === 'true';
-  });
+  const navigate = useNavigate();
   const [clickCount, setClickCount] = useState(0);
   const [clickTimer, setClickTimer] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Only start timer if Tom Cruise hasn't been shown yet
+    // Check if Tom Cruise has already been shown - if so, redirect immediately
+    const hasShownTomCruise = localStorage.getItem('celebrityQuizTomCruiseShown') === 'true';
     if (hasShownTomCruise) {
+      navigate('/tom-cruise', { replace: true });
       return;
     }
 
-    // Start 10-second timer to switch to Tom Cruise
+    // Start 10-second timer to navigate to Tom Cruise page
     const timer = setTimeout(() => {
-      setCurrentCelebrity('tomcruise');
-      setHasShownTomCruise(true);
       localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
+      navigate('/tom-cruise', { replace: true });
     }, 10000);
 
     return () => clearTimeout(timer);
-  }, [hasShownTomCruise]);
-
-  const getCurrentImage = () => {
-    return currentCelebrity === 'jenniferlopez' ? jenniferLopezImage : tomCruiseImage;
-  };
-
-  const getCurrentName = () => {
-    return currentCelebrity === 'jenniferlopez' ? 'Jennifer Lopez' : 'Tom Cruise';
-  };
+  }, [navigate]);
 
   const handleQuizClick = () => {
     if (clickTimer) {
@@ -48,18 +35,8 @@ const CelebrityQuiz = () => {
 
     if (newClickCount === 3) {
       // Triple click detected - reset everything
-      setCurrentCelebrity('jenniferlopez');
-      setHasShownTomCruise(false);
       setClickCount(0);
       localStorage.removeItem('celebrityQuizTomCruiseShown');
-      
-      // Start new 10-second timer
-      const timer = setTimeout(() => {
-        setCurrentCelebrity('tomcruise');
-        setHasShownTomCruise(true);
-        localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
-      }, 10000);
-      
       return;
     }
 
@@ -85,15 +62,15 @@ const CelebrityQuiz = () => {
 
         <div className="relative">
           <img
-            src={getCurrentImage()}
-            alt={`Celebrity: ${getCurrentName()}`}
-            className={`celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30 ${currentCelebrity === 'jenniferlopez' ? 'translate-x-2' : ''}`}
+            src={jenniferLopezImage}
+            alt="Celebrity: Jennifer Lopez"
+            className="celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30 translate-x-2"
           />
         </div>
 
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-foreground">
-            {getCurrentName()}
+            Jennifer Lopez
           </h2>
         </div>
       </Card>
