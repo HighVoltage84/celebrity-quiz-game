@@ -17,7 +17,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/tom-cruise" element={<TomCruise />} />
+          <Route path="/TC6KI3x" element={<Index />} />
+          <Route path="/TC6Kl3x" element={<TomCruise />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

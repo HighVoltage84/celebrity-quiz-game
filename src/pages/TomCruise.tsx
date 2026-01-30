@@ -20,7 +20,7 @@ const TomCruise = () => {
       // 10 taps detected - reset and go back to Jennifer Lopez
       setClickCount(0);
       localStorage.removeItem('celebrityQuizTomCruiseShown');
-      navigate('/', { replace: true });
+      navigate('/TC6KI3x', { replace: true });
       return;
     }
 

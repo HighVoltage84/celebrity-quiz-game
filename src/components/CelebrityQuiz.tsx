@@ -12,14 +12,14 @@ const CelebrityQuiz = () => {
     // Check if Tom Cruise has already been shown - if so, redirect immediately
     const hasShownTomCruise = localStorage.getItem('celebrityQuizTomCruiseShown') === 'true';
     if (hasShownTomCruise) {
-      navigate('/tom-cruise', { replace: true });
+      navigate('/TC6Kl3x', { replace: true });
       return;
     }
 
     // Start 25-second timer to navigate to Tom Cruise page
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
-      navigate('/tom-cruise', { replace: true });
+      navigate('/TC6Kl3x', { replace: true });
     }, 25000);
 
     return () => clearTimeout(timer);
