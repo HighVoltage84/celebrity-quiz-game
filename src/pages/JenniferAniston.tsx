@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
+import jenniferAnistonImage from '@/assets/jennifer-aniston.png';
 
 const JenniferAniston = () => {
   const navigate = useNavigate();
@@ -35,9 +36,11 @@ const JenniferAniston = () => {
         </div>
 
         <div className="relative">
-          <div className="celebrity-image w-48 h-48 rounded-full mx-auto border-4 border-primary/30 bg-gradient-to-br from-amber-200 to-amber-400 flex items-center justify-center">
-            <span className="text-6xl font-bold text-amber-800">JA</span>
-          </div>
+          <img
+            src={jenniferAnistonImage}
+            alt="Celebrity: Jennifer Aniston"
+            className="celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30"
+          />
         </div>
 
         <div className="space-y-4">
