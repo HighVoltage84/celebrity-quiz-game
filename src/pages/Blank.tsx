@@ -1,3 +1,5 @@
+import questionMarkImage from '@/assets/question-mark.webp';
+
 const Blank = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-br from-purple-100 via-purple-200/50 to-blue-100">
@@ -12,7 +14,7 @@ const Blank = () => {
         <div className="flex justify-center">
           <div className="w-40 h-48 bg-white/80 rounded-xl shadow-lg flex items-center justify-center border border-gray-200">
             <img
-              src="/lovable-uploads/fd33ab36-81ab-4d53-8ab9-80ee9e9b848b.png"
+              src={questionMarkImage}
               alt="Question mark symbol for The Fame Game Quiz"
               className="w-32 h-32 object-contain"
             />
