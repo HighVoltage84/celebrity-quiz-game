@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import TomCruise from "./pages/TomCruise";
 import JenniferAniston from "./pages/JenniferAniston";
 import JohnCena from "./pages/JohnCena";
+import Drake from "./pages/Drake";
+import TaylorSwift from "./pages/TaylorSwift";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/TC6Kl3x" element={<TomCruise />} />
           <Route path="/JC2MI3g" element={<JenniferAniston />} />
           <Route path="/JC2Ml3g" element={<JohnCena />} />
+          <Route path="/TS7UeIc" element={<Drake />} />
+          <Route path="/TS7Uelc" element={<TaylorSwift />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
