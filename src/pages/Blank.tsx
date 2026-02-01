@@ -12,11 +12,11 @@ const Blank = () => {
         </h1>
         
         <div className="flex justify-center">
-          <div className="w-40 h-48 bg-white/80 rounded-xl shadow-lg flex items-center justify-center border border-gray-200">
+          <div className="w-56 h-64 bg-white/80 rounded-xl shadow-lg flex items-center justify-center border border-gray-200 p-2">
             <img
               src={questionMarkImage}
               alt="Question mark symbol for The Fame Game Quiz"
-              className="w-32 h-32 object-contain"
+              className="w-48 h-52 object-contain"
             />
           </div>
         </div>
