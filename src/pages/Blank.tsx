@@ -12,7 +12,7 @@ const Blank = () => {
         </h1>
         
         <div className="flex justify-center">
-          <div className="w-56 h-64 bg-white/80 rounded-xl shadow-lg flex items-center justify-center border border-gray-200 p-2">
+          <div className="w-56 h-64 bg-white/80 rounded-xl shadow-lg flex items-center justify-center border border-gray-200 p-0.5">
             <img
               src={questionMarkImage}
               alt="Question mark symbol for The Fame Game Quiz"
