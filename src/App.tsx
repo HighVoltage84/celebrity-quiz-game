@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/TS7Uelc" element={<TaylorSwift />} />
           <Route path="/Z3U5BI8t" element={<RyanReynolds />} />
           <Route path="/Z3U5Bl8t" element={<Zendaya />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* ADD ALL CUSTOM ROUTES  ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
