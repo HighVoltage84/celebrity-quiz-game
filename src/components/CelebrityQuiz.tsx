@@ -39,7 +39,7 @@ const CelebrityQuiz = () => {
           <img
             src={jenniferLopezImage}
             alt="Celebrity: Jennifer Lopez"
-            className="celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30 translate-x-2"
+            className="celebrity-image w-48 h-48 object-cover rounded-full mx-auto border-4 border-primary/30"
           />
         </div>
 
