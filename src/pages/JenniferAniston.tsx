@@ -14,11 +14,11 @@ const JenniferAniston = () => {
       return;
     }
 
-    // Start 25-second timer to navigate to John Cena page
+    // Start 15-second timer to navigate to John Cena page
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizJohnCenaShown', 'true');
       navigate('/JC2Ml3g', { replace: true });
-    }, 25000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
