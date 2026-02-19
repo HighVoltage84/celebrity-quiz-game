@@ -14,7 +14,7 @@ const CelebrityQuiz = () => {
       return;
     }
 
-    // Start 25-second timer to navigate to Tom Cruise page
+    // Start 15-second timer to navigate to Tom Cruise page
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
       navigate('/TC6Kl3x', { replace: true });
