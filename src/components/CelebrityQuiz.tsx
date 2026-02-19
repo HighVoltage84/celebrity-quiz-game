@@ -18,7 +18,7 @@ const CelebrityQuiz = () => {
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizTomCruiseShown', 'true');
       navigate('/TC6Kl3x', { replace: true });
-    }, 16000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
