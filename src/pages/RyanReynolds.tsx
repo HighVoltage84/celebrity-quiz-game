@@ -14,11 +14,11 @@ const RyanReynolds = () => {
       return;
     }
 
-    // Start 25-second timer to navigate to Zendaya page
+    // Start 15-second timer to navigate to Zendaya page
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizZendayaShown', 'true');
       navigate('/Z3U5Bl8t', { replace: true });
-    }, 25000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
