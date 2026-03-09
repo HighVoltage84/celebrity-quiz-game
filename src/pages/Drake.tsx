@@ -14,11 +14,11 @@ const Drake = () => {
       return;
     }
 
-    // Start 15-second timer to navigate to Taylor Swift page
+    // Start 12-second timer to navigate to Taylor Swift page
     const timer = setTimeout(() => {
       localStorage.setItem('celebrityQuizTaylorSwiftShown', 'true');
       navigate('/TS7Uelc', { replace: true });
-    }, 15000);
+    }, 12000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
